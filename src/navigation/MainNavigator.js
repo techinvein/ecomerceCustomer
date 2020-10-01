@@ -14,7 +14,17 @@ export const RootStackScreen = ({ isUserLoggedIn }) => (
             animationEnabled: false
             }}
         />
-        ) : (
+        ) : 
+        isUserLoggedIn.skip ? (
+        <RootStack.Screen
+            name="App"
+            component={AppStackScreen}
+            options={{
+            animationEnabled: false
+            }}
+        />
+        ) :
+        (
         <RootStack.Screen
             name="Auth"
             component={AuthStackScreen}

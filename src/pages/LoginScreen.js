@@ -11,9 +11,15 @@ const LoginScreen = (props) => {
         props.storeLoginStatus(true);
     }
 
+    const skipPress = async () => {
+        console.log("pressed");
+        props.storeLoginStatus({skip: true});
+    }
+
     return (
         <View style={styles.container}>
             <Button onPress={loginPress} title="Login"/>
+            <Button onPress={skipPress} title="Skip"/>
         </View>
     )
 }
