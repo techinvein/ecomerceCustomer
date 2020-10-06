@@ -11,6 +11,7 @@ import CustomProduct from '../components/CustomProduct';
 import CustomScrollSegment from '../components/CustomScrollSegment';
 import CustomProductTwo from '../components/CustomProductTwo';
 import CustomSegment from '../components/CustomSegment';
+import CategoryImage from '../components/CategoryImage';
 
 const defaultwidth = Dimensions.get('window').width;
 
@@ -61,7 +62,7 @@ class CategoriesScreen extends Component {
             // activeItem={"sdcbsdbcds"}
             //     /> */}
 
-            <CustomImage 
+            <CategoryImage 
                 // imageURL="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
                 // imageHeight={40}
                 // imageWidth={100}
@@ -75,8 +76,8 @@ class CategoriesScreen extends Component {
 render(){
     return (
         <KeyboardAvoidingView style={styles.container}>
-            <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/>
-            <View style={[styles.mainView,{paddingTop:StatusBar.currentHeight}]}>
+            {/* <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/> */}
+            <View style={[styles.mainView]}>
                 <View style={{marginBottom:45}}>
                     <CustomHeader 
                         title={'Product list'} 
@@ -87,7 +88,7 @@ render(){
                         showSearchBar={false}
                         backClick={()=>{}}
                         menuClick={()=>{}}
-                        cartClick={()=>{}}
+                        cartClick={()=>{this.props.navigation.navigate("MyOrdersScreen")}}
                     />
                     <View style={{flexDirection:'row',flex:1,width:'100%'}}>
                         <View style={{flex:1}}>
@@ -130,7 +131,7 @@ render(){
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1},
+    container: { flex: 1,marginTop:StatusBar.currentHeight},
     mainView:{ flex:1,flexDirection:"column"},
 
     segmentContainer:{

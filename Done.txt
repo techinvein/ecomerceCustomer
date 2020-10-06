@@ -1,0 +1,6 @@
+//Pradip==>
+
+1. Home screen
+2. Product listing screen
+3. Categories screen
+4. My Order Screen

@@ -116,7 +116,7 @@ render(){
                         name="Sudipta Sarkar" 
                         day="1 day ago" showBack={false} showCart={true} 
                         searchbarContainerStyle={searchbarContainerStyle} 
-                        showSearchBar={true}
+                        showSearchBar={false}
                         cartClick={()=>{ this.props.navigation.navigate("ProductListScreen") }}
                         navigation={this.props.navigation}
                     />
@@ -252,8 +252,10 @@ render(){
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1},
-    mainView:{ flex:1,flexDirection:"column"},
+    container: { flex: 1,marginTop:StatusBar.currentHeight},
+    mainView:{ 
+        flex:1,flexDirection:"column"
+    },
 
     bannerStyle:{
         paddingLeft:5,

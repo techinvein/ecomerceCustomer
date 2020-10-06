@@ -100,8 +100,8 @@ class ProductListScreen extends Component {
 render(){
     return (
         <KeyboardAvoidingView style={styles.container}>
-            <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/>
-            <View style={[styles.mainView,{paddingTop:StatusBar.currentHeight}]}>
+            {/* <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/> */}
+            <View style={[styles.mainView]}>
                 <View>
                     <CustomHeader 
                         title={'Product list'} 
@@ -150,7 +150,7 @@ render(){
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1},
+    container: { flex: 1,marginTop:StatusBar.currentHeight},
     mainView:{ flex:1,flexDirection:"column"},
 
     segmentContainer:{
