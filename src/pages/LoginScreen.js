@@ -24,6 +24,10 @@ const LoginScreen = (props) => {
     )
 }
 
+LoginScreen.defaultNavigationOptions  = {
+    title: 'Home',
+    };
+
 const mapStateToProps = ({ user }) => ({
     userDetails: user.userDetails
 });
