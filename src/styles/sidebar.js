@@ -1,8 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StatusBar, StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     menuWrapper:{
         flex: 1,
+        // top:StatusBar.currentHeight
     },
     menuScroll:{
         flex: 1,

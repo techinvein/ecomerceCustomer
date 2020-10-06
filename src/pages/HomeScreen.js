@@ -107,8 +107,8 @@ class HomeScreen extends Component {
 render(){
     return (
         <KeyboardAvoidingView style={styles.container}>
-            <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/>
-            <View style={[styles.mainView,{paddingTop:StatusBar.currentHeight}]}>
+            {/* <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/> */}
+            <View style={styles.mainView}>
                 <View>
                     <CustomHeader 
                         title={'Home '} 
@@ -118,6 +118,7 @@ render(){
                         searchbarContainerStyle={searchbarContainerStyle} 
                         showSearchBar={true}
                         cartClick={()=>{ this.props.navigation.navigate("ProductListScreen") }}
+                        navigation={this.props.navigation}
                     />
                 </View>
                 
