@@ -4,3 +4,7 @@
 2. Product listing screen
 3. Categories screen
 4. My Order Screen
+5. Login
+6.OTP screen
+7.Location screen
+8.My basket

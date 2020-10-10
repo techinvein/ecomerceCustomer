@@ -117,7 +117,7 @@ render(){
                         day="1 day ago" showBack={false} showCart={true} 
                         searchbarContainerStyle={searchbarContainerStyle} 
                         showSearchBar={false}
-                        cartClick={()=>{ this.props.navigation.navigate("ProductListScreen") }}
+                        cartClick={()=>{ this.props.navigation.navigate("LoginPageScreen") }}
                         navigation={this.props.navigation}
                     />
                 </View>

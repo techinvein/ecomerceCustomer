@@ -150,7 +150,9 @@ render(){
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1,marginTop:StatusBar.currentHeight},
+    container: { flex: 1,
+        marginTop:StatusBar.currentHeight
+    },
     mainView:{ flex:1,flexDirection:"column"},
 
     segmentContainer:{
