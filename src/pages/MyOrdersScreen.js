@@ -12,6 +12,7 @@ import CustomProductTwo from '../components/CustomProductTwo';
 import CategoryImage from '../components/CategoryImage';
 import CustomCart_Item from '../components/CustomCart_Item';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import CustomOrderStatus from '../components/CustomOrderStatus';
 const defaultwidth = Dimensions.get('window').width;
 
 const searchbarContainerStyle = {
@@ -54,18 +55,58 @@ class MyOrdersScreen extends Component {
 
 
     promotioncontent=({item,index}) => (
-        <View style={{paddingLeft:5,paddingRight:5,marginBottom:10,borderBottomWidth:0.2}}>
-            <CustomCart_Item
-                imageURL={item.image}
-                imageHeight={null}
-                imageWidth={null}
-                itemName={"Special chicken biryani"}
-                itemPrice={120}
-                saveAmount={60}
-                itemDiscount={50}
-                enableCart={true}
-                itemCount={5}
-            />
+        <View style={{marginBottom:15}}>
+            <View>
+                <CustomOrderStatus
+                orderStatus={"Pending"}
+                orderId="OREDRID_98745"
+                deliveryDate="2020-08-31 Monday"
+                orderTotal="$530"
+                    />
+            </View>
+            <View style={{flex:1,marginBottom:10}}>
+                <CustomCart_Item
+                    imageURL={item.image} imageHeight={null}
+                    imageWidth={null}
+                    itemName={"Special chicken biryani"}
+                    itemPrice={120}
+                    saveAmount={60}
+                    itemDiscount={50}
+                    enableCart={false}
+                    itemCount={5}
+                />
+                <CustomCart_Item
+                    imageURL={item.image}
+                    imageHeight={null}
+                    imageWidth={null}
+                    itemName={"Special chicken biryani"}
+                    itemPrice={120}
+                    saveAmount={60}
+                    itemDiscount={50}
+                    enableCart={false}
+                    itemCount={5}
+                />
+                <Text style={{textAlign:'right',paddingRight:20,color:Colors.button_color_1,fontSize:13,fontWeight:'700',letterSpacing:0.5}}>+1 item more</Text>
+            </View>
+            <View style={{backgroundColor:'white'}}>
+                <View style={{backgroundColor:'#FFF'}}>
+                    <View style={{flex:1,flexDirection:'row',justifyContent:'space-evenly'}}>
+                        <View onPress={()=>{alert("csdcbds")}}  style={{flex:1,backgroundColor:'black',height:40,margin:10,justifyContent:'center',borderRadius:10}}>
+                            <TouchableOpacity onPress={()=>{alert("Contact us clicked")}}
+                            style={{height:40,flexDirection:'column',width:'100%',justifyContent:'center'}}>
+                                <Text style={{color:'white',textAlign:'center'}}>Contact us</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{flex:1,backgroundColor:'green',height:40,margin:10,justifyContent:'center',borderRadius:10}}>
+                            <TouchableOpacity onPress={()=>{this.props.navigation.navigate("OrderDetailsScreen")}}
+                            style={{height:40,flexDirection:'column',width:'100%',justifyContent:'center'}}>
+                                <Text style={{color:'white',textAlign:'center'}}>View Details</Text>
+                            </TouchableOpacity>
+                            
+                        </View>
+                    </View>
+                </View>
+            </View>
         </View>
 
     )
@@ -96,61 +137,9 @@ class MyOrdersScreen extends Component {
                                 </Text>
                             </View>
                         </View>
-                        
-                        <View style={{backgroundColor:'#FFF',marginBottom:10,borderBottomWidth:0.2}}>
-                            {/* Order Id details */}
-                            <View style={{padding:15,paddingTop:14,paddingBottom:14}}>
-                                <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                                    <Text style={{fontSize:14,letterSpacing:0.5,fontWeight:'600',}}>
-                                        Order Status
-                                    </Text>
-                                    <Text style={{fontSize:14,letterSpacing:0.5,fontWeight:'600',}}>
-                                        Order ID
-                                    </Text>
-                                </View>
-
-                                <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                                    <View style={{flexDirection:'column',justifyContent:'center',paddingTop:5}}>
-                                        <Text style={{padding:5,paddingLeft:12,paddingRight:12,borderRadius:10, backgroundColor:Colors.button_background_1,color:Colors.whiteColor,fontSize:11,letterSpacing:0.5,fontWeight:'600'}}>Accepted</Text>
-                                    </View>
-                                    <View style={{flexDirection:'column',justifyContent:'center'}}>
-                                        <Text style={{fontSize:11,letterSpacing:0.5,fontWeight:'700'}}>
-                                            OREDRID_98765
-                                        </Text>
-                                    </View>
-                                </View>
-                            </View>
-
-                            {/*Delivery details */}
-                            <View style={{padding:15,paddingTop:0,paddingBottom:14}}>
-                                <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                                    <Text style={{fontSize:14,letterSpacing:0.5,fontWeight:'600',}}>
-                                        Expected delivery
-                                    </Text>
-                                    <Text style={{fontSize:14,letterSpacing:0.5,fontWeight:'600',}}>
-                                        Order Total
-                                    </Text>
-                                </View>
-
-                                <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                                    <View style={{flexDirection:'column',justifyContent:'center'}}>
-                                        <Text style={{fontSize:11,letterSpacing:0.5,fontWeight:'700'}}>
-                                            2020-08-31 Monday
-                                        </Text>
-                                    </View>
-                                    <View style={{flexDirection:'column',justifyContent:'center'}}>
-                                        <Text style={{fontSize:11,letterSpacing:0.5,fontWeight:'700'}}>
-                                            OREDRID_98765
-                                        </Text>
-                                    </View>
-                                </View>
-                            </View>
-
-
-                        </View>
- 
                     </View>
-                    <View style={{flex:1,marginBottom:10}}>
+
+                    <View style={{flex:1}}>
                         <FlatList
                             // horizontal={true}
                             data={this.state.repeateItem}
@@ -161,26 +150,6 @@ class MyOrdersScreen extends Component {
                             keyExtractor={(item, index) => index.toString()}
                             // contentContainerStyle={{justifyContent:"space-evenly",flexDirection:"row",width:Dimensions.get('window').width}}
                         />
-                    </View>
-
-                    <View style={{width:'100%',height:'10%',backgroundColor:'white'}}>
-                        <View style={{backgroundColor:'#FFF'}}>
-                            <View style={{flex:1,flexDirection:'row',justifyContent:'space-evenly'}}>
-                                <View onPress={()=>{alert("csdcbds")}}  style={{flex:1,backgroundColor:'black',height:40,margin:10,justifyContent:'center',borderRadius:10}}>
-                                    <TouchableOpacity onPress={()=>{alert("Contact us clicked")}}
-                                    style={{height:40,flexDirection:'column',width:'100%',justifyContent:'center'}}>
-                                        <Text style={{color:'white',textAlign:'center'}}>Contact us</Text>
-                                    </TouchableOpacity>
-                                </View>
-                                <View style={{flex:1,backgroundColor:'green',height:40,margin:10,justifyContent:'center',borderRadius:10}}>
-                                    <TouchableOpacity onPress={()=>{alert("View detals clicked")}}
-                                    style={{height:40,flexDirection:'column',width:'100%',justifyContent:'center'}}>
-                                        <Text style={{color:'white',textAlign:'center'}}>View Details</Text>
-                                    </TouchableOpacity>
-                                    
-                                </View>
-                            </View>
-                        </View>
                     </View>
                     
                 </View>

@@ -19,6 +19,9 @@ import LoginPageScreen from '../pages/LoginPageScreen';
 import OtpScreen from '../pages/OtpScreen';
 import LocationScreen from '../pages/LocationScreen';
 import MyBasketScreen from '../pages/MyBasketScreen';
+import ProductDetailsScreen from '../pages/ProductDetailsScreen';
+import OrderDetailsScreen from '../pages/OrderDetailsScreen';
+import ProfileScreen from '../pages/ProfileScreen';
 
 const AuthStack = createStackNavigator();
 const AppStack = createDrawerNavigator();
@@ -97,6 +100,32 @@ export const AppStackScreen = () => (
             component={MyBasketScreen}
             options={{ title: "My basket ", headerShown: false, }}
         />
+
+        {/* Product Details screen */}
+        <AppStack.Screen
+            name="ProductDetailsScreen"
+            component={ProductDetailsScreen}
+            options={{ title: "Product Details", headerShown: false, }}
+        />
+
+        {/* Order Details screen */}
+        <AppStack.Screen
+            name="OrderDetailsScreen"
+            component={OrderDetailsScreen}
+            options={{ title: "Order Details", headerShown: false, }}
+        />
+
+        {/* Profile screen */}
+        <AppStack.Screen
+            name="ProfileScreen"
+            component={ProfileScreen}
+            options={{ title: "My Account", headerShown: false, }}
+        />
+
+
+
+
+
 
 
 

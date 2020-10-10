@@ -8,3 +8,5 @@
 6.OTP screen
 7.Location screen
 8.My basket
+9. Product Details
+10.Profile
