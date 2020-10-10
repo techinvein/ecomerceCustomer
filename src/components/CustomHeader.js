@@ -27,13 +27,13 @@ const CustomHeader = ({
 })=> {
     return (
         <View style={[styles.headercontainer,{backgroundColor:headerBackground ? headerBackground : '#FFF'}]}>
-            <View style={{flexDirection:'row',justifyContent:'space-between',padding: 10}}>
+            <View style={{flexDirection:'row',justifyContent:'space-between',padding: 10,paddingTop:13,paddingBottom:13}}>
                 <View style={{flexDirection:'row',width:'80%'}}>
                     {showBack ?
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                         {/* <Icon name='chevron-back-outline' type="ionicon" color={headerBackground ? '#FFF' : '#000'} onPress={backClick} /> */}
                             <Image
-                                style={{width:20,height:20, tintColor: headerBackground ? '#FFF' : '#000'}}
+                                style={{width:17,height:17,marginTop:3, tintColor: headerBackground ? '#FFF' : '#000'}}
                                 source={require('../assets/images/back.png')}
                                 resizeMode="stretch"
                             />
@@ -41,14 +41,14 @@ const CustomHeader = ({
                         :
                         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
                             <Image
-                                style={{width:30,height:20,tintColor: headerBackground ? '#FFF' : '#000'}}
+                                style={{width:17,height:17,marginTop:3,tintColor: headerBackground ? '#FFF' : '#000',}}
                                 source={require('../assets/images/menu.png')}
                                 resizeMode="stretch"
                             />
                         {/* <Icon name='menu-outline'  type="ionicon" color={headerBackground ? '#FFF' : '#000'} onPress={menuClick} /> */}
                         </TouchableOpacity>
                     }
-                    <View style={{paddingTop:3,paddingLeft:10}}>
+                    <View style={{marginTop:1,paddingLeft:10}}>
                         <Text style={{color:headerBackground ? '#FFF' : '#000',fontSize:15}}>{title}</Text>
                     </View>
                 </View>
@@ -56,7 +56,7 @@ const CustomHeader = ({
                     {showCart?
                         <TouchableOpacity onPress={cartClick}>
                             <Image
-                                style={{width:30,height:30, tintColor: headerBackground ? '#FFF' : '#000'}}
+                                style={{width:17,height:17,marginTop:3,marginRight:5, tintColor: headerBackground ? '#FFF' : '#000'}}
                                 source={require('../assets/images/cart.png')}
                                 resizeMode="stretch"
                             />
