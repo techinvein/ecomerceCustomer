@@ -28,7 +28,8 @@ const styles=StyleSheet.create({
         padding:10,
         paddingTop:7,
         paddingBottom:7,
-        borderRadius:5
+        borderRadius:5,
+        letterSpacing:0.5
     }
 })
 export default CustomScrollSegment;

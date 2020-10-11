@@ -58,18 +58,18 @@ render(){
                     <CustomHeader 
                         title={'My basket '} 
                         headerBackground={Colors.baseColor}
-                        showBack={true} showCart={false} 
+                        showBack={true} showCart={true} 
                         searchbarContainerStyle={searchbarContainerStyle} 
                         showSearchBar={false}
-                        cartClick={()=>{ this.props.navigation.navigate("LoginPageScreen") }}
+                        cartClick={()=>{ this.props.navigation.navigate("ProductDetailsScreen") }}
                         navigation={this.props.navigation}
                     />
                 </View>
                 <View style={styles.contentBody}>
                     <ScrollView>
                         
-                        <View style={{padding:20,backgroundColor:'white'}}>
-                            <Text style={{fontWeight:'700',letterSpacing:0.5,fontSize:18}}>Shipping Address</Text>
+                        <View style={styles.addressContainer}>
+                            <Text style={styles.shipingAdd}>Shipping Address</Text>
                             <View style={{paddingTop:10}}>
                                 <Text style={[styles.addressText],{fontSize:16}}>ARGHYADEEP SINHA</Text>
                                 <Text style={[styles.addressText],{}}>Boisakhi pizza, 77/12 Elgin Road</Text>
@@ -86,7 +86,7 @@ render(){
                             </View>
                         </View>
 
-                        <View style={{padding:20,paddingTop:0,marginTop:20,backgroundColor:'white'}}>
+                        <View style={styles.itemContainer}>
                             <View style={{paddingTop:10}}>
                                 <FlatList
                                     // horizontal={true}
@@ -101,25 +101,25 @@ render(){
                             </View>
                         </View>
                         
-                        <View style={{padding:20,paddingTop:0,marginTop:20,backgroundColor:'white'}}>
-                            <Text style={{fontWeight:'700',letterSpacing:0.5,fontSize:18,paddingTop:15}}>Payment details</Text>
+                        <View style={styles.paymentContainer}>
+                            <Text style={styles.paymentTitle}>Payment details</Text>
                             <View style={{paddingTop:10}}>
                                 
-                                <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+                                <View style={styles.mrpContainer}>
                                     <Text style={[styles.addressText],{fontSize:13}}>MRP Total</Text>
                                     <Text style={[styles.addressText],{fontSize:13}}>525.00</Text>
                                 </View>
-                                <View style={{flexDirection:'row',justifyContent:'space-between',paddingTop:5}}>
+                                <View style={styles.couponContainer}>
                                     <View >
                                         <Text style={[styles.addressText],{fontSize:13}}>Coupon Discount</Text>
                                         <Text style={[styles.addressText],{fontSize:10,color:Colors.baseColor,paddingTop:4}}>FIRST50 applied</Text>
                                     </View>
-                                    <View style={{flexDirection:'column',justifyContent:'center'}}>
+                                    <View style={styles.discount}>
                                         <Text style={[styles.addressText],{fontSize:13}}>-25.00</Text>
                                     </View>
                                 </View>
 
-                                <View style={{flexDirection:'row',paddingTop:8,justifyContent:'space-between',marginTop:10,borderWidth:0.4,borderBottomWidth:0,borderLeftWidth:0,borderRightWidth:0}}>
+                                <View style={styles.discountContainer}>
                                     <View >
                                         <Text style={[styles.addressText],{fontSize:13}}>Coupon Discount</Text>
                                         <Text style={[styles.addressText],{fontSize:10,color:Colors.button_color_1,paddingTop:4}}>You save $50 in this order</Text>
@@ -133,9 +133,9 @@ render(){
 
                         </View>
 
-                        <View style={{padding:20,paddingTop:0,marginTop:20,backgroundColor:'white'}}>
-                            <Text style={{fontWeight:'700',letterSpacing:0.5,fontSize:18,paddingTop:15}}>Shipping Address</Text>
-                            <View style={{paddingTop:10,flex:1,flexDirection:'row',justifyContent:'flex-start'}}>
+                        <View style={styles.paymentContainer}>
+                            <Text style={styles.shipingTitle}>Shipping Address</Text>
+                            <View style={styles.shipingImg}>
                                 <View>
                                     <Image
                                         style={{width:30,height:30}}
@@ -151,10 +151,10 @@ render(){
                             </View>
                         </View>
                     
-                        <View style={{padding:20,paddingTop:0,marginTop:20,backgroundColor:'white'}}>
-                            <Text style={{fontWeight:'700',letterSpacing:0.5,fontSize:18,paddingTop:15}}>Payment Mode</Text>
+                        <View style={styles.paymentContainer}>
+                            <Text style={styles.paymentMode}>Payment Mode</Text>
                             
-                            <TouchableOpacity style={{paddingTop:10,flex:1,flexDirection:'row',justifyContent:'space-between',borderBottomWidth:0.3,paddingBottom:10}}>
+                            <TouchableOpacity style={styles.paymentOption1}>
                                 <View style={{flex:1,flexDirection:'row',justifyContent:'flex-start'}}>
                                     <View>
                                         <Image
@@ -229,7 +229,39 @@ const styles = StyleSheet.create({
     mainView:{ flex:1,flexDirection:"column",},
     contentBody:{flex:1},
 
-    addressText:{fontWeight:'700',letterSpacing:0.5,marginBottom:5}
+    addressContainer:{padding:20,backgroundColor:'white'},
+    shipingAdd:{fontWeight:'700',letterSpacing:0.5,fontSize:18},
+    addressText:{fontWeight:'700',letterSpacing:0.5,marginBottom:5},
+
+    itemContainer:{padding:20,paddingTop:0,marginTop:20,backgroundColor:'white'},
+
+    paymentContainer:{padding:20,paddingTop:0,marginTop:20,backgroundColor:'white'},
+    paymentTitle:{fontWeight:'700',letterSpacing:0.5,fontSize:18,paddingTop:15},
+
+    mrpContainer:{flexDirection:'row',justifyContent:'space-between'},
+    couponContainer:{flexDirection:'row',justifyContent:'space-between',paddingTop:5},
+    discount:{flexDirection:'column',justifyContent:'center'},
+
+    discountContainer:{
+        flexDirection:'row',paddingTop:8,justifyContent:'space-between',
+        marginTop:10,borderWidth:0.4,borderBottomWidth:0,
+        borderLeftWidth:0,borderRightWidth:0
+    },
+    shipingTitle:{fontWeight:'700',letterSpacing:0.5,fontSize:18,paddingTop:15},
+    shipingImg:{paddingTop:10,flex:1,flexDirection:'row',justifyContent:'flex-start'},
+
+    paymentMode:{fontWeight:'700',letterSpacing:0.5,fontSize:18,paddingTop:15},
+    paymentOption1:{
+        paddingTop:10,flex:1,flexDirection:'row',
+        justifyContent:'space-between',borderBottomWidth:0.3,
+        paddingBottom:10
+    },
+
+    
+
+
+
+
 
   });
   
