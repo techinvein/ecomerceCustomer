@@ -59,7 +59,7 @@ export default class SaveAddress extends Component {
     }
   }
   addNewAdd() {
-    this.props.navigation.navigate('AddDeliveryAddress');
+    this.props.navigation.navigate('DeliveryAddressPage');
   }
  
   SelectAddress(index){

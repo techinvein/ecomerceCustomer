@@ -206,8 +206,8 @@ class OrderDetailsScreen extends Component {
                                             <Text style={{color:'white',textAlign:'center'}}>Cancel Order</Text>
                                         </TouchableOpacity>
                                     </View>
-                                    <View style={{flex:1,backgroundColor:'green',height:40,margin:10,justifyContent:'center',borderRadius:10}}>
-                                        <TouchableOpacity onPress={()=>{this.props.navigation.navigate("ProfileScreen")}}
+                                    <View style={{flex:1,backgroundColor:'#509e02',height:40,margin:10,justifyContent:'center',borderRadius:10}}>
+                                        <TouchableOpacity onPress={()=>{this.props.navigation.navigate("UserRating")}}
                                         style={{height:40,flexDirection:'column',width:'100%',justifyContent:'center'}}>
                                             <Text style={{color:'white',textAlign:'center'}}>Rating us</Text>
                                         </TouchableOpacity>

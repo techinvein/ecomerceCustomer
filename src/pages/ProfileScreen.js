@@ -43,14 +43,14 @@ class ProfileScreen extends Component {
 
     render() {
         return (
-            <KeyboardAvoidingView style={styles.container}>
+            <ScrollView style={styles.container}>
                 {/* <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/> */}
                 <View style={[styles.mainView]}>
                     <View>
                         <CustomHeader
                             title={'My Account'}
                             headerBackground={Colors.baseColor}
-                            showBack={true} showCart={true}
+                            showBack={false} showCart={true}
                             searchbarContainerStyle={searchbarContainerStyle}
                             showSearchBar={false}
                             cartClick={() => { this.props.navigation.navigate("MyOrdersScreen") }}
@@ -70,7 +70,7 @@ class ProfileScreen extends Component {
                     <ScrollView contentContainerStyle={styles.bottomContainer}>
                         <TouchableOpacity
                             style={styles.option}
-                            onPress={() => { }}
+                            onPress={() => {this.props.navigation.navigate('EditAccount') }}
                         >
                             <Icon name="person-outline" type="ionicon" size={20} color={Colors.baseColor} />
                             <View style={{ marginLeft: 16 }}>
@@ -85,7 +85,7 @@ class ProfileScreen extends Component {
 
                         <TouchableOpacity
                             style={styles.option}
-                            onPress={() => { }}
+                            onPress={() => {this.props.navigation.navigate('SaveAddress') }}
                         >
                             <Icon name="location-outline" type="ionicon" size={20} color={Colors.baseColor} />
                             <View style={{ marginLeft: 16 }}>
@@ -139,7 +139,7 @@ class ProfileScreen extends Component {
 
                         </TouchableOpacity>
 
-                        <View style={{ flexDirection: 'row', justifyContent: 'center',marginTop:35 }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'center',marginTop:80 }}>
                             <CustomScrollSegment title="Sign out" activeItem="Sign out" itemClick={() => { }} />
                         </View>
 
@@ -147,7 +147,7 @@ class ProfileScreen extends Component {
                     </ScrollView>
 
                 </View>
-            </KeyboardAvoidingView>
+            </ScrollView>
         )
     }
 

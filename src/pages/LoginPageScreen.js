@@ -55,10 +55,10 @@ render(){
             <View style={[styles.mainView]}>
                 <View style={{flex:1,justifyContent:'center',paddingTop:15,paddingLeft:20,paddingRight:20,marginTop:8}}>
                     <View>
-                        <Text style={{fontSize:18,color:Colors.button_color_1,fontWeight:'700',letterSpacing:0.4,marginBottom:8}}>ONE CLICK SIGNUP</Text>
-                        <Text style={{fontSize:14,color:Colors.itemBorder,marginBottom:8}}>Please use valid information to create an account</Text>
+                        <Text style={{textAlign:'center',fontSize:18,color:Colors.button_color_1,fontWeight:'700',letterSpacing:0.4,marginBottom:8}}>ONE CLICK SIGNUP</Text>
+                        <Text style={{fontSize:14,color:Colors.itemBorder,marginBottom:8,textAlign:'center'}}>Please use valid information to create an account</Text>
                     </View>
-                    <View >
+                    <View style={{alignSelf:'center'}}>
                         <Image
                             style={{width:160,height:80}}
                             source={ require('../assets/images/Fastfooder.png')}

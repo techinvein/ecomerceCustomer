@@ -41,7 +41,7 @@ class ProductDetailsScreen extends Component {
             <CustomProduct
                 // imageURL="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
                 imageURL = {item.image} 
-                clickAddtoCart={()=>{this.clickme(item,index)}}
+                //clickAddtoCart={()=>{this.clickme(item,index)}}
                 removeProduct ={()=>{this.removeProduct(item,index)}}
                 addProduct={()=>{this.clickme(item,index)}}
                 itemCount={item.count}

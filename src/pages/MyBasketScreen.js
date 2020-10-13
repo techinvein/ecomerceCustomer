@@ -229,7 +229,7 @@ class MyBasketScreen extends Component {
                                     <View style={{ flex: 1 }}>
                                         <CustomButton
                                             name="Place Order"
-                                            // onPress={()=>{this.props.navigation.navigate("MyBasketScreen")}}
+                                            onPress={()=>{this.props.navigation.navigate("OrderSuccess")}}
                                             buttonColor={Colors.text_seconday_color}
                                         // buttonIcon={<Icon name='locate-outline' type="ionicon" color={'#FFF'} />}
                                         />

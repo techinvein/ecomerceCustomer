@@ -132,7 +132,7 @@ render(){
                 
                 <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:5,marginLeft:10,marginRight:10}}>
                     <View style={{width:'70%'}}>
-                        <View ><Text style={{paddingBottom:3,fontSize:14,color:Colors.text_deault_color}}>Nearest Branch</Text></View>
+                        <View ><Text style={{paddingBottom:3,fontSize:14, fontFamily: "Poppins-Regular",color:Colors.text_deault_color}}>Nearest Branch</Text></View>
                         <View style={{flexDirection:"row"}}>
                             <View style={{flexDirection:'column',justifyContent:'center'}}>
                                 <Icon name='location-outline'  type="ionicon" color={Colors.baseColor} size={17}/>
@@ -163,7 +163,7 @@ render(){
 
                         <View>
                             <View style={{flexDirection:"row",flex:1,justifyContent:"space-between",padding:10,paddingTop:20}}>
-                                <Text style={{color:'#FD3A00',letterSpacing:1,fontWeight:'600',fontSize:16}}>Top selling foods</Text>
+                                <Text style={{color:'#FD3A00',letterSpacing:1,fontWeight:'600', fontFamily: "Poppins-Regular",fontSize:16}}>Top selling foods</Text>
                                 <Text style={{color:'#1477B0',letterSpacing:1,fontWeight:'600'}}>View all</Text>
                             </View>
                             <View>
@@ -192,7 +192,7 @@ render(){
                                     />
                                 </TouchableOpacity>
                                 <TouchableOpacity style={{flexDirection:"row",justifyContent:'center',paddingTop:12}}  onPress={() => {this.props.navigation.navigate('CategoriesScreen') }}>
-                                    <Text style={{textAlign:'center',fontSize:13,fontWeight:'700',letterSpacing:1}}>GROCERY ITEMS </Text>
+                                    <Text style={{textAlign:'center',fontSize:13, fontFamily: "Poppins-Regular",fontWeight:'700',letterSpacing:1}}>GROCERY ITEMS </Text>
                                 </TouchableOpacity>
                             </View>
 
@@ -217,8 +217,8 @@ render(){
                         
                         <View>
                             <View style={{flexDirection:"row",flex:1,justifyContent:"space-between",padding:10,paddingTop:20}}>
-                                <Text style={{color:'#FD3A00',letterSpacing:1,fontWeight:'600',fontSize:16}}>Top selling Grocery items</Text>
-                                <Text style={{color:'#1477B0',letterSpacing:1,fontWeight:'600'}}>View all</Text>
+                                <Text style={{color:'#FD3A00',letterSpacing:1,fontWeight:'600',fontSize:16, fontFamily: "Poppins-Regular",}}>Top selling Grocery items</Text>
+                                <Text style={{color:'#1477B0',letterSpacing:1,fontWeight:'600', fontFamily: "Poppins-Regular"}}>View all</Text>
                             </View>
                             <View>
                                 <FlatList

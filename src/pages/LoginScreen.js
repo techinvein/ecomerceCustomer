@@ -63,11 +63,11 @@ render(){
       <ScrollView>
             {/* <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/> */}
             <View style={[styles.mainView]}>
-                <View style={{flex:1,justifyContent:'center',padding:15,paddingLeft:20,paddingRight:20}}>
+                <View style={{flex:1,justifyContent:'center',alignitems:'center',padding:15,paddingRight:20}}>
                     <View>
-                        <Text style={{fontSize:20,fontWeight:'700',letterSpacing:0.4,marginTop:20,marginBottom:12}}>WELCOME TO</Text>
+                        <Text style={{textAlign:'center',fontSize:20,fontWeight:'700',letterSpacing:0.4,marginTop:20,marginBottom:12}}>WELCOME TO</Text>
                     </View>
-                    <View >
+                    <View style={{justifyContent:'center',alignSelf:'center'}}>
                         <Image
                             style={{width:180,height:90}}
                             source={ require('../assets/images/Fastfooder.png')}

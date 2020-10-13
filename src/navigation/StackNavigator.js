@@ -24,9 +24,14 @@ import OrderDetailsScreen from '../pages/OrderDetailsScreen';
 import ProfileScreen from '../pages/ProfileScreen';
 import SearchLocation from '../pages/SearchLocation';
 import NearestBranchList from '../pages/NearestBranchList'
-import SaveAddress from '../pages/SaveAddress'
-import Coupons from '../pages/Coupons'
-
+import SaveAddress from '../pages/SaveAddress';
+import Coupons from '../pages/Coupons';
+import DeliveryAddressPage from '../pages/AddLocation';
+import ContactScreen from '../pages/ContactScreen';
+import AboutUs from '../pages/AboutUs';
+import OrderSuccess from '../pages/OrderSuccess';
+import UserRating from '../pages/UserRating'
+import EditAccount from '../pages/EditAccount'
 
 const AuthStack = createStackNavigator();
 const AppStack = createDrawerNavigator();
@@ -77,7 +82,23 @@ export const AppStackScreen = () => (
             component={HomeScreen}
             options={{ title: "Home", headerShown: false, }}
         />
-
+   <AppStack.Screen
+            name="ContactScreen"
+            component={ContactScreen}
+            options={{ title: "Need Help", headerShown: false, }}
+        />
+         <AppStack.Screen
+            name="EditAccount"
+            component={EditAccount}
+            options={{ title: "Need Help", headerShown: false, }}
+        />
+        
+           <AppStack.Screen
+            name="UserRating"
+            component={UserRating}
+            options={{ title: "Need Help", headerShown: false, }}
+        />
+        
         <AppStack.Screen
             name="NearestBranchList"
             component={NearestBranchList}
@@ -110,8 +131,20 @@ export const AppStackScreen = () => (
         />
 
 <AppStack.Screen
+            name="OrderSuccess"
+            component={OrderSuccess}
+            options={{ title: "My Orders", headerShown: false, }}
+        />
+
+
+<AppStack.Screen
             name="SaveAddress"
             component={SaveAddress}
+            options={{ title: "My Orders", headerShown: false, }}
+        />
+        <AppStack.Screen
+            name="AboutUs"
+            component={AboutUs}
             options={{ title: "My Orders", headerShown: false, }}
         />
 

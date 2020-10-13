@@ -58,7 +58,7 @@ const SideMenu = (props) => {
                             <Image style={styles.menuImage} source={require('./../assets/images/order.png')} />
                             <Text style={styles.navText}>Manage Orders</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.link} onPress={() => {openPage("Home")}}>
+                        <TouchableOpacity style={styles.link} onPress={() => {openPage("ContactScreen")}}>
                             <Image style={styles.menuImage} source={require('./../assets/images/contact.png')} />
                             <Text style={styles.navText}>Need Help</Text>
                         </TouchableOpacity>
@@ -70,7 +70,7 @@ const SideMenu = (props) => {
                             <Image style={styles.menuImage} source={require('./../assets/images/rate.png')} />
                             <Text style={styles.navText}>Rate us</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.link} onPress={() => {openPage("Home")}}>
+                        <TouchableOpacity style={styles.link} onPress={() => {openPage("AboutUs")}}>
                             <Image style={styles.menuImage} source={require('./../assets/images/people.png')} />
                             <Text style={styles.navText}>About us</Text>
                         </TouchableOpacity>
