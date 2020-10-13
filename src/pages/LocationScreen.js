@@ -57,7 +57,7 @@ render(){
                     <View >
                         <CustomButton
                             name="Use your current location"
-                            onPress={()=>{this.props.navigation.navigate("MyBasketScreen")}}
+                            onPress={()=>{this.props.navigation.navigate("Home")}}
                             buttonColor="green"
                             buttonIcon={<Icon name='locate-outline' type="ionicon" color={'#FFF'} />}
                          />
@@ -66,7 +66,7 @@ render(){
                         <CustomButton
                             textColor={Colors.text_seconday_color}
                             name="Another location"
-                            // onPress={()=>{this.props.navigation.navigate("LocationScreen")}}
+                            onPress={()=>{this.props.navigation.navigate("SearchLocation")}}
                             buttonColor="white"
                          />
                     </View>

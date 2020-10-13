@@ -3,6 +3,7 @@ import { StatusBar, StyleSheet } from "react-native";
 export default StyleSheet.create({
     menuWrapper:{
         flex: 1,
+        marginTop:14
         // top:StatusBar.currentHeight
     },
     menuScroll:{
@@ -11,7 +12,7 @@ export default StyleSheet.create({
     imgTextArea:{
         justifyContent:"center",
         alignItems:"center",
-        height:210,
+        height:180,
         backgroundColor: "#30cb3f"
     },
     backgroundImg: {
@@ -29,18 +30,18 @@ export default StyleSheet.create({
         marginTop: 10,
         fontFamily: "Poppins-Regular",
         color:"#fff",
-        fontSize:18,
+        fontSize:14,
     },
     mobile: {
         fontFamily: "Poppins-Regular",
         color:"#fff",
-        fontSize:15,
+        fontSize:14,
         textAlign: "left"
     },
     username:{
         fontFamily: "Poppins-Regular",
         color:"#fff",
-        fontSize:16,
+        fontSize:12,
     },
 
     link:{
@@ -53,9 +54,10 @@ export default StyleSheet.create({
         paddingBottom:10,
     },
     menuImage:{
-        width:30,
-        height:31,
+        width:25,
+        height:26,
     },
+  
     shareImage: {
         width:40,
         height:40,
@@ -63,20 +65,26 @@ export default StyleSheet.create({
     navText:{
         color:"#484949",
         fontFamily: "Poppins-SemiBold",
-        fontSize:14,
+        fontSize:13,
         paddingLeft:15,
         width:"75%",
     },
     footer:{
-        justifyContent:"center",
-        alignItems:"center",
-        height:100,
-        backgroundColor: "#30cb3f",
+       // justifyContent:"center",
+       // alignItems:"center",
+       // height:100,
+        //backgroundColor: "#30cb3f",
         // alignSelf: "flex-end"
     },
+    footerdes:{
+        justifyContent:"center",
+        alignItems:"center",
+       height:100,
+        backgroundColor: "#30cb3f",
+    },
     profileImg: {
-        width: 100,
-        height: 100,
+        width: 80,
+        height: 80,
         borderRadius: 100,
         borderWidth: 5,
         borderColor: "#fff",
@@ -86,9 +94,13 @@ export default StyleSheet.create({
     },
     profileText: {
         fontFamily: "Poppins-Regular",
-        fontSize:80,
+        fontSize:50,
         color: "#fff",
         textAlign: "center",
         marginTop:15
-    }
+    },
+    imgContainer:{
+        opacity:0.5
+    },
+
 })

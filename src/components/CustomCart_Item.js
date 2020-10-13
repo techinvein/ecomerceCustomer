@@ -18,7 +18,7 @@ const CustomCart_Item = ({
 
 })=> {
     return (
-        <View style={{flexDirection:'row',justifyContent:'space-between',minHeight:90}}>
+        <View style={{flexDirection:'row',justifyContent:'space-between',minHeight:90,borderBottomColor:Colors.border,borderBottomWidth:0.6,marginBottom:12,paddingBottom:12}}>
             <View style={{flex:1,height:'100%'}}>
                 <Image
                     style={{width:imageWidth?imageWidth :'100%',height:imageHeight?imageHeight :defaultwidth}}

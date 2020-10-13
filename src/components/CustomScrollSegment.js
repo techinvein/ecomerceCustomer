@@ -12,7 +12,7 @@ const CustomScrollSegment = ({title,activeItem,itemClick})=> {
         <View style={styles.headercontainer}>
             <TouchableOpacity style={{margin:5,marginLeft:2,marginRight:2}} onPress={itemClick}>
                 <Text style={[styles.itemColor,
-                    {backgroundColor:title == activeItem ?Colors.baseColor :Colors.background_1,
+                    {backgroundColor:title == activeItem ?Colors.button_color_1 :Colors.background_1,
                         color:title == activeItem ?'#FFF' :'#000'
                     }]}>
                     {title}

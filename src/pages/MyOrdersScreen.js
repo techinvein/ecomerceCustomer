@@ -64,7 +64,7 @@ class MyOrdersScreen extends Component {
                 orderTotal="$530"
                     />
             </View>
-            <View style={{flex:1,marginBottom:10}}>
+            <View style={{flex:1,marginBottom:8,paddingVertical:12,paddingLeft:8,backgroundColor:Colors.light}}>
                 <CustomCart_Item
                     imageURL={item.image} imageHeight={null}
                     imageWidth={null}
@@ -127,14 +127,24 @@ class MyOrdersScreen extends Component {
                             backClick={()=>{}}
                             menuClick={()=>{}}
                             cartClick={()=>{}}
+                            navigation={this.props.navigation}
                         />
                     </View>
                     <View>
-                        <View style={{backgroundColor:'#FFF',marginBottom:10}}>
+                        <View style={{backgroundColor:'#FFF',marginBottom:10,flexDirection:'row',justifyContent:'space-between'}}>
                             <View style={{padding:15,paddingTop:14,paddingBottom:14}}>
                                 <Text style={{fontSize:16,letterSpacing:0.5,fontWeight:'700'}}>
                                     Manage your order
                                 </Text>
+                            </View>
+                            <View style={{padding:15,paddingTop:14,paddingBottom:14}}>
+                            <View style={{paddingHorizontal:12,paddingVertical:8,borderRadius:8,backgroundColor:Colors.itemBackground,flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
+                            <Icon name='options-outline' type="ionicon" color={Colors.light}/>
+                            <Text style={{fontSize:14,color:Colors.light,letterSpacing:0.5,fontWeight:'500',marginLeft:4}}>
+                                   Filter
+                                </Text>
+                                </View>
+                                
                             </View>
                         </View>
                     </View>

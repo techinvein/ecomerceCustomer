@@ -1,5 +1,5 @@
-// const baseColor = '#10C841';
-const baseColor = 'green';
+const baseColor = '#10C841';
+//const baseColor = 'green';
 
 export default {
     baseColor,
@@ -10,7 +10,7 @@ export default {
     button_color_1:'#056EAB',
     background_1:'#E5E5E5',
     button_background_1:'#EB7D00',
-
+    catbg:'#f4f4f4',
 
 
     primary: '#2DB552',

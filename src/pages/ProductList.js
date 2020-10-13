@@ -40,7 +40,7 @@ class ProductListScreen extends Component {
                 { id: '3', image: require('../assets/images/offer3.jpg'),  count:0 }
             ],
             segmentItem:[
-                {name:"ALL"},{name:"Blended Oil"},{name:"Edible Oil"},{name:"Groceries"}
+                {name:"ALL"},{name:"Chiness"},{name:"Indian"},{name:"Biriyani"},{name:"Combo Thali"},{name:"Chiken item"}
             ],
             selected_segment_item:"ALL"
 
@@ -86,6 +86,7 @@ class ProductListScreen extends Component {
                 addProduct={()=>{this.clickme(item,index)}}
                 itemCount={item.count}
                 itemImageURL={item.image}
+                imageClick ={()=>{this.viewDetails()}}
             />
             <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:10,marginBottom:5}}>
                 <View style={{flex:1}}></View>
@@ -96,7 +97,10 @@ class ProductListScreen extends Component {
     )
 
 
-
+    viewDetails(){
+        
+         this.props.navigation.navigate('ProductDetailsScreen')
+     }
 render(){
     return (
         <KeyboardAvoidingView style={styles.container}>
@@ -113,8 +117,9 @@ render(){
                         backClick={()=>{}}
                         menuClick={()=>{}}
                         cartClick={()=>{this.props.navigation.navigate("CategoriesScreen")}}
+                        navigation={this.props.navigation}
                     />
-                    <View>
+                    <View >
                         <FlatList
                             horizontal={true}
                             data={this.state.segmentItem}

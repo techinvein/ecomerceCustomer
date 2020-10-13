@@ -50,24 +50,51 @@ class LoginPageScreen extends Component {
 
 render(){
     return (
-        <KeyboardAvoidingView style={styles.container}>
+        <ScrollView style={styles.container}>
             {/* <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "#00BCD4" translucent = {true}/> */}
             <View style={[styles.mainView]}>
-                <View style={{flex:1,justifyContent:'center',padding:15,paddingLeft:20,paddingRight:20}}>
+                <View style={{flex:1,justifyContent:'center',paddingTop:15,paddingLeft:20,paddingRight:20,marginTop:8}}>
                     <View>
-                        <Text style={{fontSize:20,fontWeight:'700',letterSpacing:0.4}}>WELCOME TO</Text>
+                        <Text style={{fontSize:18,color:Colors.button_color_1,fontWeight:'700',letterSpacing:0.4,marginBottom:8}}>ONE CLICK SIGNUP</Text>
+                        <Text style={{fontSize:14,color:Colors.itemBorder,marginBottom:8}}>Please use valid information to create an account</Text>
                     </View>
                     <View >
                         <Image
-                            style={{width:130,height:80}}
+                            style={{width:160,height:80}}
                             source={ require('../assets/images/Fastfooder.png')}
                             resizeMode="contain"
                         />
                     </View>
+                    
                 </View>
 
                 <View style={{flex:1,padding:15,paddingLeft:20,paddingRight:20,justifyContent:'center'}}>
                     {/* <Text>Loream ipsum is simply dummy of the industry</Text> */}
+                    <View style={{paddingBottom:15}}>
+                        <EditText
+                            icon={
+                                <Icon name='person-outline' type="ionicon" color={Colors.border} />
+                            }
+                            type="text"
+                            // style={styles.inputMargin}
+                            // value={this.state.email}
+                            // onChange={(text) => this.setState({email:text})}
+                            placeholder="Enter your full name"
+                         />
+                    </View>
+                    
+                    <View style={{paddingBottom:15}}>
+                        <EditText
+                            icon={
+                                <Icon name='call-outline' type="ionicon" color={Colors.border} />
+                            }
+                            type="email"
+                            // style={styles.inputMargin}
+                            // value={this.state.email}
+                            // onChange={(text) => this.setState({email:text})}
+                            placeholder="Enter your mobile number"
+                         />
+                    </View>
                     <View style={{paddingBottom:15}}>
                         <EditText
                             icon={
@@ -93,12 +120,25 @@ render(){
                         
                         />
                     </View>
+                    <View style={{paddingBottom:15}}>
+                        <EditText
+                            icon={
+                                <Icon name='lock-open-outline' type="ionicon" color={Colors.border} />
+                            }
+                            type="password"
+                            // style={styles.inputMargin}
+                            // value={this.state.password}
+                            // onChange={(text) => this.setState({password:text})}
+                            placeholder="Confirm Password"
+                        
+                        />
+                    </View>
                     <View>
                         {/* <TouchableOpacity style={{height:45,width:'100%',backgroundColor:'green',flexDirection:'column',justifyContent:'center',borderRadius:5}}>
                             <Text style={{textAlign:'center',color:'white',letterSpacing:0.5,fontSize:16,fontWeight:'600'}}>Login</Text>
                         </TouchableOpacity> */}
                         <CustomButton
-                            name="Login"
+                            name="Register"
                             onPress={()=>{this.props.navigation.navigate("OtpScreen")}}
                             buttonColor="green"
                          />
@@ -106,31 +146,15 @@ render(){
                 </View>
 
 
-                <View style={{flex:1,justifyContent:'space-evenly'}}>
-                    <View >
-                        <Text style={{textAlign:'center',letterSpacing:0.5,color:Colors.button_color_1}}>Sign in latter</Text>
-                    </View>
-                    <View >
-                        <Text style={{textAlign:'center',letterSpacing:0.5}}>Forgot password</Text>
-                    </View>
-                </View>
                 <View style={{flex:1,justifyContent:'space-evenly',paddingLeft:20,paddingRight:20}}>
-                    <View >
-                        <Text style={{textAlign:'center',letterSpacing:0.5}}>Don't have an Account?</Text>
-                    </View>
-                    <View>
-                        {/* <TouchableOpacity style={{height:45,width:'100%',backgroundColor:Colors.text_seconday_color,flexDirection:'column',justifyContent:'center',borderRadius:5}}>
-                            <Text style={{textAlign:'center',color:'white',letterSpacing:0.5,fontSize:16,fontWeight:'600'}}>Registration</Text>
-                        </TouchableOpacity> */}
-                        <CustomButton
-                            name="Registration"
-                            onPress={()=>{}}
-                            buttonColor={Colors.text_seconday_color}
-                         />
-                    </View>
+                    <TouchableOpacity 
+                            onPress={() => {this.props.navigation.pop() }}>
+                        <Text style={{textAlign:'center',letterSpacing:0.5}}>Already have an Account?<Text style={{color:Colors.button_color_1,fontWeight:'700'}}>Login</Text></Text>
+                    </TouchableOpacity>
+                   
                 </View>
             </View>
-        </KeyboardAvoidingView>
+        </ScrollView>
       )
 }
 
@@ -144,3 +168,4 @@ const styles = StyleSheet.create({
   
 
 export default LoginPageScreen;
+

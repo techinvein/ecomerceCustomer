@@ -90,8 +90,8 @@ render(){
                                     <View style={{flexDirection:'row',justifyContent:'space-between'}}>
                                         <Text style={{fontSize:13,fontWeight:'bold',paddingRight:5}}>Rs. 40</Text>
                                         <View style={{flexDirection:'column',justifyContent:'center'}}>
-                                            <Text style={{opacity:0.4,fontSize:12,paddingRight:7}}>Rs. 150</Text>
-                                            <Text style={{position:'absolute',textAlign:"center",width:'90%'}}>--------</Text>
+                                            <Text style={{opacity:0.4,fontSize:12,paddingRight:7,textDecorationLine: 'line-through'}}>Rs. 150</Text>
+                                          
                                         </View>
                                         
                                     </View>
@@ -146,7 +146,7 @@ render(){
                             </View>
                         </View>
                         <View style={{flexDirection:'column',justifyContent:'center'}}>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => {this.props.navigation.navigate('MyBasketScreen') }}>
                                 <Text style={{color:'#fff',letterSpacing:0.5,fontWeight:'700'}}>View Details</Text>
                             </TouchableOpacity>
                         </View>

@@ -19,7 +19,7 @@ const CustomImage = ({imageHeight,imageWidth,imageURL,imageText,onPress})=> {
         >
             <View>
                 <Image
-                    style={{width:imageWidth?imageWidth :'100%',height:imageHeight?imageHeight :'100%'}}
+                    style={{borderRadius:6,width:imageWidth?imageWidth :'100%',height:imageHeight?imageHeight :'100%'}}
                     // source={{
                     //     uri: imageURL,
                     // }}

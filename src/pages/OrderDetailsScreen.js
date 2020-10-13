@@ -57,6 +57,7 @@ class OrderDetailsScreen extends Component {
                     itemDiscount={50}
                     enableCart={false}
                     itemCount={5}
+                    navigation={this.props.navigation}
                 />
                 {/* <Text style={{textAlign:'right',paddingRight:20,color:Colors.button_color_1,fontSize:13,fontWeight:'700',letterSpacing:0.5}}>+1 item more</Text>
             </View> */}
@@ -80,6 +81,7 @@ class OrderDetailsScreen extends Component {
                             backClick={()=>{}}
                             menuClick={()=>{}}
                             cartClick={()=>{}}
+                            navigation={this.props.navigation}
                         />
                     </View>
                     <View>
@@ -132,20 +134,20 @@ class OrderDetailsScreen extends Component {
                                     <Text style={{fontSize:12,letterSpacing:0.5}}>Pending</Text>
                                 </View>
                                 <View style={styles.orderIdContainer}>
-                                    <Text style={{fontSize:12,letterSpacing:0.5}}>Expected Delivery</Text>
-                                    <Text style={{fontSize:12,letterSpacing:0.5}}>30/08/2020</Text>
+                                    <Text style={{fontSize:13,letterSpacing:0.5}}>Expected Delivery</Text>
+                                    <Text style={{fontSize:13,letterSpacing:0.5}}>30/08/2020</Text>
                                 </View>
                             </View>
                         
                             <View style={{padding:15,backgroundColor:'white',marginBottom:10}}>
                                 <Text style={{fontWeight:'700',letterSpacing:0.5}}>Billing Details</Text>
                                 <View style={[styles.orderIdContainer,{borderBottomWidth:0}]}>
-                                    <Text style={{fontSize:12,letterSpacing:0.5}}>MRP Total</Text>
-                                    <Text style={{fontSize:12,letterSpacing:0.5}}>525.00</Text>
+                                    <Text style={{fontSize:13,letterSpacing:0.5}}>MRP Total</Text>
+                                    <Text style={{fontSize:13,letterSpacing:0.5}}>525.00</Text>
                                 </View>
                                 <View style={[styles.orderIdContainer,{borderBottomWidth:0}]}>
-                                    <Text style={{fontSize:12,letterSpacing:0.5}}>Delivery fee</Text>
-                                    <Text style={{fontSize:12,letterSpacing:0.5}}>20</Text>
+                                    <Text style={{fontSize:13,letterSpacing:0.5}}>Delivery fee</Text>
+                                    <Text style={{fontSize:13,letterSpacing:0.5}}>20</Text>
                                 </View>
                                 <View style={styles.orderIdContainer}>
                                     <View>
@@ -159,7 +161,7 @@ class OrderDetailsScreen extends Component {
                                 <View style={styles.orderIdContainer}>
                                     <View>
                                         <Text style={{fontSize:13,letterSpacing:0.5,fontWeight:'700'}}>Total Amount</Text>
-                                        <Text style={{fontSize:10,paddingTop:5,color:Colors.button_color_1}}>You save $50 in this order</Text>
+                                        <Text style={{fontSize:11,paddingTop:5,color:Colors.button_color_1}}>You save $50 in this order</Text>
                                     </View>
                                     <View style={{flexDirection:'column',justifyContent:'center'}}>
                                         <Text style={{fontSize:13,letterSpacing:0.5,fontWeight:'700'}}>525.00</Text>
@@ -186,14 +188,14 @@ class OrderDetailsScreen extends Component {
                                         <Text style={[styles.addressText],{fontSize:16}}>ARGHYADEEP SINHA</Text>
                                         <Text style={[styles.addressText],{}}>Boisakhi pizza, 77/12 Elgin Road</Text>
                                         <Text style={[styles.addressText],{}}>Kolkata west bengal, 700159</Text>
-                                        <Text style={[styles.addressText],{}}>+919038457564</Text>
+                                        <Text style={[styles.addressText],{}}>+91123456789</Text>
                                     </View>
                                 </View>
                             </View>
                             <View style={{backgroundColor:'white',marginBottom:10}}>
                                 <View style={{flexDirection:'row',justifyContent:'center',paddingTop:15,paddingBottom:15}}>
                                     <Text style={{fontSize:12,fontWeight:'600',letterSpacing:0.5}}>Need payment receipt? </Text>
-                                    <Text style={{fontSize:12,fontWeight:'600',letterSpacing:0.5,textDecorationLine: 'underline',color:Colors.button_color_1}}>Need payment receipt?</Text>
+                                    <Text style={{fontSize:12,fontWeight:'600',letterSpacing:0.5,textDecorationLine: 'underline',color:Colors.danger}}>Download Now</Text>
                                 </View>
                             </View>
                             <View style={{backgroundColor:'#FFF'}}>

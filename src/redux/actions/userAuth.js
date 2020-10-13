@@ -39,7 +39,7 @@ const storeUserDetails = (userDetails) => {
 };
 
 const storeLoginStatus = (status) => {
-    console.log("hii", status);
+   
     return {
         type: UPDATE_LOGIN_STATUS,
         payload: status

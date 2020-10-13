@@ -25,7 +25,7 @@ const CategoryImage = ({imageHeight,imageWidth,imageURL,imageText,onPress})=> {
                     resizeMode="cover"
                 />
             </View>
-            <View style={styles.textMain}>
+            <View style={styles.textMain} >
                 <Text style={styles.itemTitle}>{imageText}</Text>
             </View>
         </TouchableOpacity>

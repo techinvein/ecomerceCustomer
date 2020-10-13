@@ -5,7 +5,7 @@ import {
     Button,
     TouchableOpacity
 } from 'react-native';
-  
+
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
@@ -22,6 +22,11 @@ import MyBasketScreen from '../pages/MyBasketScreen';
 import ProductDetailsScreen from '../pages/ProductDetailsScreen';
 import OrderDetailsScreen from '../pages/OrderDetailsScreen';
 import ProfileScreen from '../pages/ProfileScreen';
+import SearchLocation from '../pages/SearchLocation';
+import NearestBranchList from '../pages/NearestBranchList'
+import SaveAddress from '../pages/SaveAddress'
+import Coupons from '../pages/Coupons'
+
 
 const AuthStack = createStackNavigator();
 const AppStack = createDrawerNavigator();
@@ -30,27 +35,52 @@ const ProfileStack = createStackNavigator();
 
 export const AuthStackScreen = () => (
     <AuthStack.Navigator>
-      <AuthStack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{ title: "Sign In", headerShown: false, }}
-      />
-    {/* <AppStack.Screen
-        name="Login"
-        component={LoginPageScreen}
-        options={{ title: "Sign In", headerShown: false, }}
-    /> */}
+        <AuthStack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{ title: "Sign In", headerShown: false, }}
+        />
 
+        <AppStack.Screen
+            name="Register"
+            component={LoginPageScreen}
+            options={{ title: "Sign In", headerShown: false, }}
+        />
+
+        {/* OTP screen */}
+        <AppStack.Screen
+            name="OtpScreen"
+            component={OtpScreen}
+            options={{ title: "Otp ", headerShown: false, }}
+        />
     </AuthStack.Navigator>
 );
 
 export const AppStackScreen = () => (
     <AppStack.Navigator drawerContent={props => <SideMenu {...props} />}>
+        {/* Location screen */}
+        <AppStack.Screen
+            name="LocationScreen"
+            component={LocationScreen}
+            options={{ title: "Select location ", headerShown: false, }}
+        />
+
+        <AppStack.Screen
+            name="SearchLocation"
+            component={SearchLocation}
+            options={{ title: "Select location ", headerShown: false, }}
+        />
 
         {/* HomeScreen */}
         <AppStack.Screen
             name="Home"
             component={HomeScreen}
+            options={{ title: "Home", headerShown: false, }}
+        />
+
+        <AppStack.Screen
+            name="NearestBranchList"
+            component={NearestBranchList}
             options={{ title: "Home", headerShown: false, }}
         />
         {/* ProductListScreen */}
@@ -65,6 +95,13 @@ export const AppStackScreen = () => (
             component={CategoriesScreen}
             options={{ title: "Categories", headerShown: false, }}
         />
+
+<AppStack.Screen
+            name="Coupons"
+            component={Coupons}
+            options={{ title: "Coupons", headerShown: false, }}
+        />
+
         {/* MyOrdersScreen */}
         <AppStack.Screen
             name="MyOrdersScreen"
@@ -72,27 +109,23 @@ export const AppStackScreen = () => (
             options={{ title: "My Orders", headerShown: false, }}
         />
 
+<AppStack.Screen
+            name="SaveAddress"
+            component={SaveAddress}
+            options={{ title: "My Orders", headerShown: false, }}
+        />
+
+
         {/* Login second page */}
-        
+
         <AppStack.Screen
             name="LoginPageScreen"
             component={LoginPageScreen}
             options={{ title: "Login", headerShown: false, }}
         />
 
-        {/* OTP screen */}
-        <AppStack.Screen
-            name="OtpScreen"
-            component={OtpScreen}
-            options={{ title: "Otp ", headerShown: false, }}
-        />
 
-        {/* Location screen */}
-        <AppStack.Screen
-            name="LocationScreen"
-            component={LocationScreen}
-            options={{ title: "Select location ", headerShown: false, }}
-        />
+
 
         {/* My basket screen */}
         <AppStack.Screen

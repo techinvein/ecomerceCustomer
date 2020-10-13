@@ -7,34 +7,36 @@ import {
     Text,
     Dimensions,Image
 } from 'react-native';
+import Colors from '../constants/Colors';
 const defaultwidth = Dimensions.get('window').width/2.7;
 const defaultHeight = Dimensions.get('window').width/3.4;
 
-const CustomProduct = ({imageHeight,imageWidth,imageURL,clickAddtoCart,removeProduct,addProduct,itemCount})=> {
+const CustomProduct = ({imageHeight,imageWidth,imageURL,clickAddtoCart,removeProduct,addProduct,itemCount,imageClick})=> {
     console.log("itemCount :", itemCount)
     return (
         <View 
             style={[styles.mainContainer,{width:imageWidth ? imageWidth : defaultwidth}]}
         >
+        <TouchableOpacity  onPress={ imageClick }>
             <Image
-                style={{width:imageWidth?imageWidth :defaultwidth,height:imageHeight?imageHeight :defaultHeight,}}
+                style={{borderTopLeftRadius:6,borderTopRightRadius:6,width:imageWidth?imageWidth :defaultwidth,height:imageHeight?imageHeight :defaultHeight,}}
                 // source={{
                 //     uri: imageURL,
                 // }}
                 source={imageURL}
                 resizeMode="cover"
             />
-            <View style={{padding:3}}>
-                <Text style={{fontSize:13,fontWeight:'bold'}}>Veg Chowmin</Text>
+            </TouchableOpacity>
+            <View style={{padding:3,paddingHorizontal:6}}>
+                <Text style={{fontSize:13,}}>Veg Chowmin</Text>
                 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                    <Text style={{fontSize:13,fontWeight:'bold'}}>Rs. 40</Text>
+                    <Text style={{fontSize:13,}}>Rs. 40</Text>
                     <View style={{flexDirection:'column',justifyContent:'center'}}>
-                        <Text style={{opacity:0.4,fontSize:12,paddingRight:7}}>Rs. 150</Text>
-                        <Text style={{position:'absolute',textAlign:"center",width:'90%'}}>--------</Text>
+                        <Text style={{opacity:0.4,fontSize:12,paddingRight:15,textDecorationLine: 'line-through'}}>Rs. 150</Text>
                     </View>
                     
                 </View>
-                <Text style={{fontSize:13,fontWeight:'bold',color:'green',paddingTop:5}}>You save $10</Text>
+                <Text style={{fontSize:13,color:Colors.button_color_1,paddingTop:5}}>You save ₹30</Text>
             </View>
             
             <View style={{padding:3,flexDirection:'row',justifyContent:'center'}}>
@@ -84,7 +86,8 @@ const styles=StyleSheet.create({
         flexDirection:'column',
         //borderWidth:1,
         paddingTop:0,
-        backgroundColor:'#DEE1E6'
+        backgroundColor:'#DEE1E6',
+        borderRadius:6
     },
     opacityView:{
         position:'absolute',

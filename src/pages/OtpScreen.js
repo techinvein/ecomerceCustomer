@@ -7,7 +7,8 @@ import { Dimensions } from 'react-native';
 import EditText from '../components/EditText';
 import CustomButton from '../components/CustomButton';
 import CustomHeader from '../components/CustomHeader';
-
+import { connect } from 'react-redux';
+import { storeLoginStatus } from '../redux/actions/userAuth';
 const defaultwidth = Dimensions.get('window').width;
 
 // const HomeScreen = () => {
@@ -18,7 +19,7 @@ const searchbarContainerStyle = {
 }
 
 // class ProductListScreen extends React.Component {
-class OtpScreen extends Component {
+class OtpScreen extends React.Component {
 
     constructor(props){
         super(props);
@@ -26,7 +27,9 @@ class OtpScreen extends Component {
         }
     }
 
-
+    veryfy = async () => {
+        this.props.storeLoginStatus(true);
+    }
 render(){
     return (
         <KeyboardAvoidingView style={styles.container}>
@@ -60,7 +63,7 @@ render(){
                     <View style={styles.titleView}>
                         <CustomButton
                             name="Verify"
-                            onPress={()=>{this.props.navigation.navigate("LocationScreen")}}
+                            onPress={()=>{this.veryfy()}}
                             buttonColor="green"
                             // buttonIcon={<Icon name='rowing' color={'#FFF'} />}
                          />
@@ -96,4 +99,17 @@ const styles = StyleSheet.create({
   });
   
 
-export default OtpScreen;
+//export default OtpScreen;
+const mapStateToProps = ({ user }) => ({
+    userDetails: user.userDetails
+});
+  
+const mapDispatchToProps = dispatch => ({
+    // userLogin: (client, inputs) => dispatch(userLogin(client, inputs)),
+    // userRegister: (client, inputs) => dispatch(userRegister(client, inputs)),
+    // sendForgotPasswordMail: (client, inputs) => dispatch(sendForgotPasswordMail(client, inputs)),
+    // skipUserLogin: () => dispatch(skipUserLogin()),
+    storeLoginStatus: (input) => dispatch(storeLoginStatus(input)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(OtpScreen);

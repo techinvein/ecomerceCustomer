@@ -41,7 +41,7 @@ const CustomHeader = ({
                         :
                         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
                             <Image
-                                style={{width:17,height:17,marginTop:3,tintColor: headerBackground ? '#FFF' : '#000',}}
+                                style={{width:19,height:19,marginTop:3,tintColor: headerBackground ? '#FFF' : '#000',}}
                                 source={require('../assets/images/menu.png')}
                                 resizeMode="stretch"
                             />
@@ -68,11 +68,12 @@ const CustomHeader = ({
             <View>
                 {showSearchBar ?
                     <SearchBar
-                        placeholder="Type Here..."
+                        placeholder="Search"
                         // onChangeText={this.updateSearch}
                         // value={search}
                         containerStyle={searchbarContainerStyle}
                         inputContainerStyle={{backgroundColor:'#FFF',borderRadius:6}}
+                        inputStyle ={{fontSize:16}}
                     />
                  :null
                 }

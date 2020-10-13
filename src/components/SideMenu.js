@@ -28,14 +28,12 @@ const SideMenu = (props) => {
         console.log("@@@@@@@@@@ Called @@@@@@@@@")
         console.log(destination)
         props.navigation.toggleDrawer();
-        // props.navigation.navigate(destination)
+        props.navigation.navigate(destination)
     };
 
     return (
         <View style={styles.menuWrapper}>
             <ScrollView style={styles.menuScroll}>
-
-
                 <View style={styles.imgTextArea}>
                     <View style={styles.profileImg}>
                         <Text style={styles.profileText}>S</Text>
@@ -46,17 +44,17 @@ const SideMenu = (props) => {
                     </View>
                 </View>
 
-                <ImageBackground resizeMode="contain" source={require('./../assets/images/side_bck.jpg')} style={styles.backgroundImg}>
+                {/* <ImageBackground style={styles.imgContainer} resizeMode="contain" source={require('./../assets/images/side_bck.jpg')} style={styles.backgroundImg}> */}
                     <View>
                         <TouchableOpacity style={styles.link} onPress={() => {openPage("Home")}}>
                             <Image style={styles.menuImage} source={require('./../assets/images/home.png')} />
                             <Text style={styles.navText}>Home</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.link} onPress={() => {openPage("Home")}}>
+                        <TouchableOpacity style={styles.link} onPress={() => {openPage("ProfileScreen")}}>
                             <Image style={styles.menuImage} source={require('./../assets/images/my_profile.png')} />
                             <Text style={styles.navText}>My Profile</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.link} onPress={() => {openPage("Home")}}>
+                        <TouchableOpacity style={styles.link} onPress={() => {openPage("MyOrdersScreen")}}>
                             <Image style={styles.menuImage} source={require('./../assets/images/order.png')} />
                             <Text style={styles.navText}>Manage Orders</Text>
                         </TouchableOpacity>
@@ -85,15 +83,20 @@ const SideMenu = (props) => {
                             <Text style={styles.navText}>Logout</Text>
                         </TouchableOpacity>
                     </View>
-                </ImageBackground>
-
+                {/* </ImageBackground> */}
+              
                 <View style={styles.footer}>
-                    <Text style={styles.username}>Version 1.0</Text>
-                    <Text style={styles.username}>Develop by Syscogen</Text>
+                <Image  source={require('./../assets/images/side_bck.jpg')} resizeMode="contain"  style={{width:'100%',height:140,opacity:0.4}}/>
+                <View style={styles.footerdes}>
+                <Text style={styles.username}>Version 1.0</Text>
+                    <Text style={styles.username}>Develop by Syscogen cognitech Pvt. Ltd.</Text>
+                </View>
+                    
                 </View>
             </ScrollView>
         </View>
     );
 }
 
+   
 export default SideMenu;

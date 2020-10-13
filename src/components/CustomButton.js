@@ -31,7 +31,7 @@ const CustomButton = ({name,onPress,buttonColor,buttonIcon,textColor})=> {
                 :null}
 
                 <View >
-                    <Text style={{textAlign:'center',color:textColor ? textColor :'white',letterSpacing:0.5,fontSize:16,fontWeight:'600'}}>{name}</Text>
+                    <Text style={{textAlign:'center',color:textColor ? textColor :'white',letterSpacing:0.5,fontSize:14,fontWeight:'600'}}>{name}</Text>
                 </View>
 
                 

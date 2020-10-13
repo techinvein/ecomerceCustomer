@@ -48,7 +48,7 @@ class CategoriesScreen extends Component {
             segmentItem:[
                 {name:"ALL"},{name:"Blended Oil"},{name:"Edible Oil"},{name:"Groceries"}
             ],
-            selected_segment_item:"ALL"
+           selected_segment_item:"Grocery Product"
 
         }
     }
@@ -57,22 +57,23 @@ class CategoriesScreen extends Component {
 
     promotioncontent=({item,index}) => (
         <View style={styles.segmentContainer}>
-            {/* // <CustomScrollSegment
-            // title={"sdcbsdbcds"}
-            // activeItem={"sdcbsdbcds"}
-            //     /> */}
+ 
 
             <CategoryImage 
                 // imageURL="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
                 // imageHeight={40}
                 // imageWidth={100}
                 imageText={item?.title}
-                imageURL = {item?.image} 
+                imageURL = {item?.image}  
+                onPress={()=>{this.viewDetails(item,index)}}
             />
           </View>
     )
 
-
+viewDetails(){
+   // alert('hi')
+    this.props.navigation.navigate('ProductListScreen')
+}
 render(){
     return (
         <KeyboardAvoidingView style={styles.container}>
@@ -89,13 +90,15 @@ render(){
                         backClick={()=>{}}
                         menuClick={()=>{}}
                         cartClick={()=>{this.props.navigation.navigate("MyOrdersScreen")}}
+                        navigation={this.props.navigation}
                     />
                     <View style={{flexDirection:'row',flex:1,width:'100%'}}>
                         <View style={{flex:1}}>
                             <CustomSegment
                                 title={"Grocery Product"}
                                 activeItem={this.state.selected_segment_item}
-                                itemClick={()=>{this.setState({selected_segment_item:"Grocery Product"})}}
+                                itemClick={()=>{this.setState({selected_segment_item:"Grocery Product"})
+                                }}
                             />
                         </View>
 
@@ -103,7 +106,8 @@ render(){
                             <CustomSegment
                                 title={"Restaurant Foods"}
                                 activeItem={this.state.selected_segment_item}
-                                itemClick={()=>{this.setState({selected_segment_item:"Restaurant Foods"})}}
+                                itemClick={()=>{this.setState({selected_segment_item:"Restaurant Foods"})
+                                }}
                             />
                         </View>
                     </View>
@@ -117,7 +121,7 @@ render(){
                             numColumns={2}
                             renderItem={this.promotioncontent}
                             showsHorizontalScrollIndicator={false}
-                            // extraData={this.state}
+                             //extraData={this.state}
                             keyExtractor={(item, index) => index.toString()}
                             // contentContainerStyle={{justifyContent:"space-evenly",flexDirection:"row",width:Dimensions.get('window').width}}
                         />

@@ -11,18 +11,19 @@ const CustomProductTwo = ({
     title,activeItem,itemClick,
     imageWidth,imageHeight,itemCount,
     clickAddtoCart,removeProduct,addProduct,
-    itemImageURL
+    itemImageURL,
+    imageClick
 })=> {
     return (
         <View style={styles.headercontainer}>
-            <View style={styles.imageContainer}>
+            <TouchableOpacity  onPress={ imageClick } style={styles.imageContainer}>
                 <Image
                     style={{width:imageWidth?imageWidth :'100%',height:imageHeight?imageHeight :'100%'}}
                     source={itemImageURL}
                     // source={require('../assets/images/food1.jpg')}
                     resizeMode="cover"
                 />
-            </View>
+            </TouchableOpacity>
             <View style={styles.descContainer}>
                 <View style={styles.descMain}>
                     <Text style={styles.descTitle}>Fortune Refined Soyabean Oil 1 litter (Pouch)</Text>
@@ -30,16 +31,18 @@ const CustomProductTwo = ({
                         <Text style={styles.mainPrice}>Rs. 40</Text>
                         <View style={styles.discountDiv}>
                             <Text style={styles.discountPrice}>Rs. 150</Text>
-                            <Text style={styles.discountDot}>--------</Text>
+                            {/* <Text style={styles.discountDot}>--------</Text> */}
                         </View>
                     </View>
                     <Text style={styles.discountAmount}>You save $20.00</Text>
+                    
                     <Image
                     style={{width:40,height:15}}
                     // source={imageURL}
                     source={require('../assets/images/demo_logo.png')}
                     resizeMode="contain"
                 />
+              
                                      
                     <View style={styles.productCount}>
                         {!itemCount || itemCount  < 1 ?
@@ -104,7 +107,7 @@ const styles=StyleSheet.create({
     discountMain:{flexDirection:'row',paddingBottom:2},
     mainPrice:{fontSize:15,fontWeight:'bold'},
     discountDiv:{flexDirection:'column',justifyContent:'center'},
-    discountPrice:{opacity:0.4,fontSize:11,paddingRight:7,paddingLeft:20},
+    discountPrice:{opacity:0.4,fontSize:11,paddingRight:7,paddingLeft:20,textDecorationLine: 'line-through'},
     discountDot:{position:'absolute',textAlign:"center",width:'90%',paddingLeft:20},
     discountAmount:{fontSize:10,color:Colors.baseColor,paddingBottom:5},
 

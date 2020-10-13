@@ -13,9 +13,12 @@ const defaultwidth = Dimensions.get('window').width;
 
 // const HomeScreen = () => {
 const searchbarContainerStyle = {
-    backgroundColor:Colors.baseColor,borderTopColor:Colors.baseColor,
-    borderBottomColor:Colors.baseColor,paddingLeft:20,
-    paddingRight:20,paddingTop:0
+    backgroundColor:Colors.primary,
+    borderTopColor:Colors.primary,
+    borderBottomColor:Colors.primary,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop:0
 }
 
 // class HomeScreen extends React.Component {
@@ -33,9 +36,9 @@ class HomeScreen extends Component {
                 { id: '6', image: require('../assets/images/food3.jpg'), count:0 },
             ],
             offersItem:[
-                { id: '1', image: require('../assets/images/offer1.jpg'),  count:0 },
-                { id: '2', image: require('../assets/images/offer2.jpg'), count:0 },
-                { id: '3', image: require('../assets/images/offer3.jpg'),  count:0 }
+                { id: '1', image: require('../assets/images/slider1.jpg'),  count:0 },
+                { id: '2', image: require('../assets/images/slider1.jpg'), count:0 },
+                { id: '3', image: require('../assets/images/slider1.jpg'),  count:0 }
             ],
             promotionItem:[
                 { id: '1', image: require('../assets/images/promotion1.png'),  count:0 },
@@ -48,8 +51,8 @@ class HomeScreen extends Component {
         <View style={styles.bannerStyle}>
             <CustomImage 
                 // imageURL="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
-                // imageHeight={40}
-                // imageWidth={100}
+                 imageHeight={130}
+                 imageWidth={220}
                 // imageText={"Demo test Demo test Demo test"}
                 imageURL = {item.image} 
             />
@@ -78,10 +81,15 @@ class HomeScreen extends Component {
                 removeProduct ={()=>{this.removeProduct(item,index)}}
                 addProduct={()=>{this.clickme(item,index)}}
                 itemCount={item.count}
+                imageClick ={()=>{this.viewDetails()}}
             />
         </View>
     )
 
+    viewDetails(){
+        
+         this.props.navigation.navigate('ProductDetailsScreen')
+     }
     clickme(item,index){
         console.log("item",item)
         this.state.repeateItem[index].count = this.state.repeateItem[index].count + 1
@@ -111,12 +119,12 @@ render(){
             <View style={styles.mainView}>
                 <View>
                     <CustomHeader 
-                        title={'Home '} 
-                        headerBackground={Colors.baseColor}
+                        title={'Kestopur najrul park, kolkata '} 
+                        headerBackground={Colors.primary}
                         name="Sudipta Sarkar" 
                         day="1 day ago" showBack={false} showCart={true} 
                         searchbarContainerStyle={searchbarContainerStyle} 
-                        showSearchBar={false}
+                        showSearchBar={true}
                         cartClick={()=>{ this.props.navigation.navigate("LoginPageScreen") }}
                         navigation={this.props.navigation}
                     />
@@ -133,7 +141,7 @@ render(){
                         </View>
                     </View>
                     <View style={{justifyContent:'center'}}>
-                        <TouchableOpacity style={{backgroundColor:Colors.button_color_1,borderRadius:5}}>
+                        <TouchableOpacity style={{backgroundColor:Colors.button_color_1,borderRadius:5}} onPress={() => {this.props.navigation.navigate('NearestBranchList') }}>
                                 <Text style={{color:'#FFF',padding:7,paddingLeft:12,paddingRight:12}}>Change</Text>
                         </TouchableOpacity>
                     </View>
@@ -155,8 +163,8 @@ render(){
 
                         <View>
                             <View style={{flexDirection:"row",flex:1,justifyContent:"space-between",padding:10,paddingTop:20}}>
-                                <Text style={{color:'#FD3A00',letterSpacing:1,fontWeight:'600'}}>Top selling food</Text>
-                                <Text style={{color:'#1477B0',letterSpacing:1,fontWeight:'700'}}>View all</Text>
+                                <Text style={{color:'#FD3A00',letterSpacing:1,fontWeight:'600',fontSize:16}}>Top selling foods</Text>
+                                <Text style={{color:'#1477B0',letterSpacing:1,fontWeight:'600'}}>View all</Text>
                             </View>
                             <View>
                                 <FlatList
@@ -171,11 +179,11 @@ render(){
                             </View>
                         </View>
 
-                        <View style={{flexDirection:'row', justifyContent:'space-evenly',flex:1,height:200,padding:10,backgroundColor:Colors.background_1,marginTop:10}}>
+                        <View style={{flexDirection:'row', justifyContent:'space-evenly',flex:1,height:200,padding:10,backgroundColor:'#DEE1E6',marginTop:10}}>
                             <View style={{flexDirection:'column', justifyContent:'center',flex:1,borderRightWidth:0.5,borderRightColor:'#3C3C3C'}}>
-                                <TouchableOpacity style={{flexDirection:"row",justifyContent:'center'}}>
+                                <TouchableOpacity style={{flexDirection:"row",justifyContent:'center'}}  onPress={() => {this.props.navigation.navigate('CategoriesScreen') }}>
                                     <Image
-                                        style={{width:100,height:100,}}
+                                        style={{width:'100%',height:70,}}
                                         // source={{
                                         //     uri: "https://homepages.cae.wisc.edu/~ece533/images/airplane.png",
                                         // }}
@@ -183,15 +191,15 @@ render(){
                                         resizeMode="cover"
                                     />
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{flexDirection:"row",justifyContent:'center',paddingTop:12}}>
-                                    <Text style={{textAlign:'center',fontSize:13,fontWeight:'600',letterSpacing:1}}>GROCERY ITEMS </Text>
+                                <TouchableOpacity style={{flexDirection:"row",justifyContent:'center',paddingTop:12}}  onPress={() => {this.props.navigation.navigate('CategoriesScreen') }}>
+                                    <Text style={{textAlign:'center',fontSize:13,fontWeight:'700',letterSpacing:1}}>GROCERY ITEMS </Text>
                                 </TouchableOpacity>
                             </View>
 
-                            <View style={{flexDirection:'column', justifyContent:'center',flex:1,borderLeftWidth:0.5,borderLeftColor:'#3C3C3C'}}>
-                                <TouchableOpacity style={{flexDirection:"row",justifyContent:'center'}}>
+                            <View style={{flexDirection:'column', justifyContent:'center',flex:1,borderLeftWidth:0.5,borderLeftColor:'#dbdbdb'}}>
+                                <TouchableOpacity style={{flexDirection:"row",justifyContent:'center'}} onPress={() => {this.props.navigation.navigate('CategoriesScreen') }}>
                                     <Image
-                                        style={{width:100,height:100,}}
+                                        style={{width:'80%',height:70,}}
                                         // source={{
                                         //     uri: "https://homepages.cae.wisc.edu/~ece533/images/airplane.png",
                                         // }}
@@ -199,8 +207,8 @@ render(){
                                         resizeMode="cover"
                                     />
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{flexDirection:"row",justifyContent:'center',paddingTop:12}}>
-                                    <Text style={{textAlign:'center',fontSize:13,fontWeight:'600',letterSpacing:1}}>RESTURANT FOODS </Text>
+                                <TouchableOpacity style={{flexDirection:"row",justifyContent:'center',paddingTop:12}} onPress={() => {this.props.navigation.navigate('CategoriesScreen') }}>
+                                    <Text style={{textAlign:'center',fontSize:13,fontWeight:'700',letterSpacing:1}}>RESTURANT FOODS </Text>
                                 </TouchableOpacity>
                             </View>
 
@@ -209,8 +217,8 @@ render(){
                         
                         <View>
                             <View style={{flexDirection:"row",flex:1,justifyContent:"space-between",padding:10,paddingTop:20}}>
-                                <Text style={{color:'#FD3A00',letterSpacing:1,fontWeight:'600'}}>Top selling Grocery items</Text>
-                                <Text style={{color:'#1477B0',letterSpacing:1,fontWeight:'700'}}>View all</Text>
+                                <Text style={{color:'#FD3A00',letterSpacing:1,fontWeight:'600',fontSize:16}}>Top selling Grocery items</Text>
+                                <Text style={{color:'#1477B0',letterSpacing:1,fontWeight:'600'}}>View all</Text>
                             </View>
                             <View>
                                 <FlatList
@@ -256,7 +264,7 @@ const styles = StyleSheet.create({
     mainView:{ 
         flex:1,flexDirection:"column"
     },
-
+  
     bannerStyle:{
         paddingLeft:5,
         paddingRight:5,
