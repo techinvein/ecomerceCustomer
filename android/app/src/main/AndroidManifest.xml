@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.fastfooder">
+  package="com.techinvein.ecommercecustomer">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
