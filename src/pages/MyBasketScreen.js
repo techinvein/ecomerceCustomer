@@ -77,7 +77,7 @@ class MyBasketScreen extends Component {
                                     <Text style={[styles.addressText, { fontSize: 15, color: Colors.dark, fontWeight: '700' }]}>ARGHYADEEP SINHA</Text>
                                     <Text style={[styles.addressText, { color: Colors.dark }]}>Boisakhi pizza, 77/12 Elgin Road</Text>
                                     <Text style={[styles.addressText, { color: Colors.dark }]}>Kolkata west bengal, 700159</Text>
-                                    <Text style={[styles.addressText, { color: Colors.dark }]}>+919038457564</Text>
+                                    <Text style={[styles.addressText, { color: Colors.dark }]}>+91 9002895900</Text>
                                 </View>
                                 <View style={{ paddingTop: 20 }}>
                                     <CustomButton

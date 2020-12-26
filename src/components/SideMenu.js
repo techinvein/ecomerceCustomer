@@ -40,7 +40,7 @@ const SideMenu = (props) => {
                     </View>
                     <View>
                         <Text style={styles.userText}>Sudipta Mukherjee</Text>
-                        <Text style={styles.mobile}>+91 9679282882</Text>
+                        <Text style={styles.mobile}>+91 9002895900</Text>
                     </View>
                 </View>
 
@@ -89,7 +89,7 @@ const SideMenu = (props) => {
                 <Image  source={require('./../assets/images/side_bck.jpg')} resizeMode="contain"  style={{width:'100%',height:140,opacity:0.4}}/>
                 <View style={styles.footerdes}>
                 <Text style={styles.username}>Version 1.0</Text>
-                    <Text style={styles.username}>Develop by Syscogen cognitech Pvt. Ltd.</Text>
+                    <Text style={styles.username}>Develop by Syscogen Cognitech Pvt. Ltd.</Text>
                 </View>
                     
                 </View>

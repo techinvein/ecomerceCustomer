@@ -26,7 +26,9 @@ const CustomProductTwo = ({
             </TouchableOpacity>
             <View style={styles.descContainer}>
                 <View style={styles.descMain}>
+                <TouchableOpacity  onPress={ imageClick } >
                     <Text style={styles.descTitle}>Fortune Refined Soyabean Oil 1 litter (Pouch)</Text>
+                </TouchableOpacity>
                     <View style={styles.discountMain}>
                         <Text style={styles.mainPrice}>Rs. 40</Text>
                         <View style={styles.discountDiv}>

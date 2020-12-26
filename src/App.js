@@ -12,6 +12,7 @@ import {
   I18nManager,
   Platform
 } from 'react-native';
+import { Dimensions } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
 import NetInfo from '@react-native-community/netinfo';
@@ -24,6 +25,9 @@ import AppStatusBar from './components/StatusBar';
 import * as actionCreator from './redux/actions/appActions';
 import * as userActionCreator from './redux/actions/userAuth';
 import {check, checkMultiple, PERMISSIONS, RESULTS, request, openSettings} from 'react-native-permissions';
+
+const defaultwidth = Dimensions.get('window').width;
+const imageDefaultHeight = Dimensions.get('window').width / 1.8;
 
 const App = () => {
 
@@ -123,14 +127,15 @@ const App = () => {
         return (
             <Modal
                 animationType="slide"
-                transparent={true}
+                //transparent={true}
                 visible={!isInternetAvailable}>
                 <View style={{
                     flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    backgroundColor: '#000',
+                   // backgroundColor: '#fff',
                     padding: 20,
+                    paddingTop:0,
                     opacity: 0.8,
                 }}>
                 <View style={{
@@ -139,13 +144,14 @@ const App = () => {
                 }}>
                 <Image
                   resizeMode="contain"
-                  source={require('./assets/images/offline.png')}
+                  source={require('./assets/images/offline_mode.png')}
                   style={{
-                    width: 90,
-                    height: 90,
+                    width: defaultwidth,
+                    height:imageDefaultHeight ,
                   }}
                 />
-                <Text style={{color: '#fff', fontSize: 16}}> You are offline </Text>
+                <Text style={{color: '#000', fontSize: 16, fontWeight:'700'}}> You are offline </Text>
+                <Text style={{color: '#000', marginTop:6,fontSize: 16,textAlign:'center'}}> try turning on your Wifi or mobile data for using the app </Text>
               </View>
             </View>
           </Modal>
