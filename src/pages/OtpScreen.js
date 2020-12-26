@@ -7,8 +7,6 @@ import { Dimensions } from 'react-native';
 import EditText from '../components/EditText';
 import CustomButton from '../components/CustomButton';
 import CustomHeader from '../components/CustomHeader';
-import { connect } from 'react-redux';
-import { storeLoginStatus } from '../redux/actions/userAuth';
 const defaultwidth = Dimensions.get('window').width;
 
 // const HomeScreen = () => {
@@ -96,20 +94,6 @@ const styles = StyleSheet.create({
     otpSecond:{padding:15,flexDirection:"row",justifyContent:'center',letterSpacing:0.5},
     resendOtp:{color:Colors.button_color_1,letterSpacing:0.5}
 
-  });
-  
-
-//export default OtpScreen;
-const mapStateToProps = ({ user }) => ({
-    userDetails: user.userDetails
-});
-  
-const mapDispatchToProps = dispatch => ({
-    // userLogin: (client, inputs) => dispatch(userLogin(client, inputs)),
-    // userRegister: (client, inputs) => dispatch(userRegister(client, inputs)),
-    // sendForgotPasswordMail: (client, inputs) => dispatch(sendForgotPasswordMail(client, inputs)),
-    // skipUserLogin: () => dispatch(skipUserLogin()),
-    storeLoginStatus: (input) => dispatch(storeLoginStatus(input)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(OtpScreen);
+export default OtpScreen;

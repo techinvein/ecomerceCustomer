@@ -6,8 +6,6 @@ import Colors from '../constants/Colors';
 import { Dimensions } from 'react-native';
 import EditText from '../components/EditText';
 import CustomButton from '../components/CustomButton';
-import { connect } from 'react-redux';
-import { storeLoginStatus } from '../redux/actions/userAuth';
 const defaultwidth = Dimensions.get('window').width;
 
 // const HomeScreen = () => {
@@ -49,13 +47,13 @@ const searchbarContainerStyle = {
     }
 
     loginPress = async () => {
-        this.props.storeLoginStatus(true);
+        this.props.navigation.navigate('Home')
     }
 
     skipPress = async () => {
         console.log("pressed");
-       this.props.storeLoginStatus({skip: true});
-     }
+        this.props.navigation.navigate('Home')
+    }
 render(){
     return (
        
@@ -135,7 +133,7 @@ render(){
                         </TouchableOpacity> */}
                         <CustomButton
                             name="Register Now"
-                            onPress={()=>{this.props.navigation.push('Register')}}
+                            onPress={()=>{this.props.navigation.navigate('LoginPageScreen')}}
                             buttonColor={Colors.text_seconday_color}
                          />
                     </View>
@@ -153,62 +151,6 @@ const styles = StyleSheet.create({
     container: { flex: 1,marginTop:StatusBar.currentHeight},
     mainView:{ flex:1,flexDirection:"column"},
 
-  });
-  
-const mapStateToProps = ({ user }) => ({
-    userDetails: user.userDetails
-});
-  
-const mapDispatchToProps = dispatch => ({
-    // userLogin: (client, inputs) => dispatch(userLogin(client, inputs)),
-    // userRegister: (client, inputs) => dispatch(userRegister(client, inputs)),
-    // sendForgotPasswordMail: (client, inputs) => dispatch(sendForgotPasswordMail(client, inputs)),
-    // skipUserLogin: () => dispatch(skipUserLogin()),
-    storeLoginStatus: (input) => dispatch(storeLoginStatus(input)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
-
-// import React, { Component } from 'react'
-// import { Button, Text, View } from 'react-native'
-// import { connect } from 'react-redux';
-// import { storeLoginStatus } from '../redux/actions/userAuth';
-// import styles from '../styles/login'
-
-// const LoginScreen = (props) => {
-
-//     const loginPress = async () => {
-//         console.log("pressed");
-//         props.storeLoginStatus(true);
-//     }
-
-//     const skipPress = async () => {
-//         console.log("pressed");
-//         props.storeLoginStatus({skip: true});
-//     }
-
-//     return (
-//         <View style={styles.container}>
-//             <Button onPress={loginPress} title="Login"/>
-//             <Button onPress={skipPress} title="Skip"/>
-//         </View>
-//     )
-// }
-
-// LoginScreen.defaultNavigationOptions  = {
-//     title: 'Home',
-//     };
-
-// const mapStateToProps = ({ user }) => ({
-//     userDetails: user.userDetails
-// });
-  
-// const mapDispatchToProps = dispatch => ({
-//     // userLogin: (client, inputs) => dispatch(userLogin(client, inputs)),
-//     // userRegister: (client, inputs) => dispatch(userRegister(client, inputs)),
-//     // sendForgotPasswordMail: (client, inputs) => dispatch(sendForgotPasswordMail(client, inputs)),
-//     // skipUserLogin: () => dispatch(skipUserLogin()),
-//     storeLoginStatus: (input) => dispatch(storeLoginStatus(input)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default LoginScreen;

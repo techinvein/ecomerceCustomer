@@ -13,64 +13,26 @@ import {
   Platform
 } from 'react-native';
 import { Dimensions } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
-import NetInfo from '@react-native-community/netinfo';
 import Spinner from 'react-native-loading-spinner-overlay';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { RootStackScreen } from './navigation/MainNavigator';
 import AppStatusBar from './components/StatusBar';
 
-import * as actionCreator from './redux/actions/appActions';
-import * as userActionCreator from './redux/actions/userAuth';
-import {check, checkMultiple, PERMISSIONS, RESULTS, request, openSettings} from 'react-native-permissions';
-
 const defaultwidth = Dimensions.get('window').width;
 const imageDefaultHeight = Dimensions.get('window').width / 1.8;
 
 const App = () => {
 
-    const dispatch = useDispatch();
     const [loginStatus, setLoginStatus] = React.useState(false);
     const [userDetails, setUserDetails] = React.useState(null);
 
-    const isUserLoggedIn = useSelector(state => {
-        console.log(state,"kkkkkkk")
-        return state.user.isUserLoggedIn
-    });
+    const isUserLoggedIn = false
 
-    // const isUserLoggedIn = false
+    const isInternetAvailable = true
 
-    const isInternetAvailable = useSelector(
-        state => state.app.isInternetAvailable,
-    );
-
-    const loader = useSelector(state => {
-        // console.log("Loader", state)
-        return state.app.loading
-    });
-
-    checkGPSPermission = async () => {
-        return new Promise((resolve, reject) => {
-            if(Platform.OS === 'android'){
-                check(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION)
-                .then((result) => {
-
-                })
-                .catch((error) => {
-
-                });
-            }
-            else if(Platform.OS === 'ios'){
-
-            }
-        })
-    }
-
-    NetInfo.addEventListener(async (state) => {
-        dispatch(actionCreator.updateInternetStatus(state.isInternetReachable));
-    });
+    const loader = false;
 
     checkLoginStatus = async () => {
       let userDetailsTemp = await AsyncStorage.getItem('userDetails');
@@ -78,11 +40,9 @@ const App = () => {
       console.log(userDetails, await AsyncStorage.getItem('isUserLoggedIn'))
       if(userDetails) {
           await setUserDetails(userDetails);
-          dispatch(userActionCreator.storeUserDetails(userDetails));
       }
       if(await AsyncStorage.getItem('isUserLoggedIn') === 'true'){
           await setLoginStatus(true);
-          dispatch(userActionCreator.storeLoginStatus(true));
       }
     }
 
@@ -123,45 +83,9 @@ const App = () => {
         [loader],
     );
 
-    const offlineModal = useMemo(() => {
-        return (
-            <Modal
-                animationType="slide"
-                //transparent={true}
-                visible={!isInternetAvailable}>
-                <View style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                   // backgroundColor: '#fff',
-                    padding: 20,
-                    paddingTop:0,
-                    opacity: 0.8,
-                }}>
-                <View style={{
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                }}>
-                <Image
-                  resizeMode="contain"
-                  source={require('./assets/images/offline_mode.png')}
-                  style={{
-                    width: defaultwidth,
-                    height:imageDefaultHeight ,
-                  }}
-                />
-                <Text style={{color: '#000', fontSize: 16, fontWeight:'700'}}> You are offline </Text>
-                <Text style={{color: '#000', marginTop:6,fontSize: 16,textAlign:'center'}}> try turning on your Wifi or mobile data for using the app </Text>
-              </View>
-            </View>
-          </Modal>
-        );
-    }, [isInternetAvailable]);
-
     return (
         <>
         {spinner}
-        {offlineModal}
         {statusBar}
         {MainNavigationContainer}
         </>

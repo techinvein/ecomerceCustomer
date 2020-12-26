@@ -38,19 +38,42 @@ const AppStack = createDrawerNavigator();
 
 const ProfileStack = createStackNavigator();
 
-export const AuthStackScreen = () => (
-    <AuthStack.Navigator>
-        <AuthStack.Screen
+// export const AuthStackScreen = () => (
+//     <AuthStack.Navigator>
+//         <AuthStack.Screen
+//             name="Login"
+//             component={LoginScreen}
+//             options={{ title: "Sign In", headerShown: false, }}
+//         />
+
+//         <AppStack.Screen
+//             name="Register"
+//             component={LoginPageScreen}
+//             options={{ title: "Sign In", headerShown: false, }}
+//         />
+
+//         {/* OTP screen */}
+//         <AppStack.Screen
+//             name="OtpScreen"
+//             component={OtpScreen}
+//             options={{ title: "Otp ", headerShown: false, }}
+//         />
+//     </AuthStack.Navigator>
+// );
+
+export const AppStackScreen = () => (
+    <AppStack.Navigator drawerContent={props => <SideMenu {...props} />}>
+        <AppStack.Screen
             name="Login"
             component={LoginScreen}
             options={{ title: "Sign In", headerShown: false, }}
         />
 
-        <AppStack.Screen
+        {/* <AppStack.Screen
             name="Register"
             component={LoginPageScreen}
             options={{ title: "Sign In", headerShown: false, }}
-        />
+        /> */}
 
         {/* OTP screen */}
         <AppStack.Screen
@@ -58,11 +81,8 @@ export const AuthStackScreen = () => (
             component={OtpScreen}
             options={{ title: "Otp ", headerShown: false, }}
         />
-    </AuthStack.Navigator>
-);
 
-export const AppStackScreen = () => (
-    <AppStack.Navigator drawerContent={props => <SideMenu {...props} />}>
+
         {/* Location screen */}
         <AppStack.Screen
             name="LocationScreen"

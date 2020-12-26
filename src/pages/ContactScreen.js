@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Image, Text, TextInput,StatusBar, View } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
-import { connect } from 'react-redux';
 import CustomHeader from '../components/CustomHeader';
 import Colors from '../constants/Colors';
-import { storeLoginStatus } from '../redux/actions/userAuth';
 import styles from '../styles/contact'
 import { Dimensions } from 'react-native';
 const ContactScreen = (props) => {
@@ -91,12 +89,4 @@ const ContactScreen = (props) => {
     )
 }
 
-const mapStateToProps = ({ user }) => ({
-    userDetails: user.userDetails
-});
-  
-const mapDispatchToProps = dispatch => ({
-    storeLoginStatus: (input) => dispatch(storeLoginStatus(input)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactScreen);
+export default ContactScreen;
